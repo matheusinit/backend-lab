@@ -41,7 +41,7 @@ Este projeto é um exemplo de como criar uma API REST utilizando o FastAPI. O Fa
 
 1. Inicie o servidor:
   ```bash
-  fastapi run fastapi_k8s/server.py
+  fastapi run app/server.py
   ```
 
 > Para desenvolvimento, use `fastapi dev ...`
