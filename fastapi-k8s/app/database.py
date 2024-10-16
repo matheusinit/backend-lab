@@ -1,5 +1,5 @@
 from sqlmodel import create_engine
-from fastapi_k8s.config import settings
+from app.config import settings
 
 
 def build_uri():

@@ -3,7 +3,7 @@ from typing import Optional
 
 import uuid
 from sqlmodel import Field, SQLModel
-from fastapi_k8s.database import engine
+from app.database import engine
 
 
 class Book(SQLModel, table=True):

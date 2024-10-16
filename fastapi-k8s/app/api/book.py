@@ -6,9 +6,9 @@ from sqlmodel import Session
 
 from sqlmodel import select
 
-from fastapi_k8s.dtos import BookCreate, BookResponse, BookUpdate, Message
-from fastapi_k8s.models import Book
-from fastapi_k8s.database import engine
+from app.dtos import BookCreate, BookResponse, BookUpdate, Message
+from app.models import Book
+from app.database import engine
 
 
 router = APIRouter()
