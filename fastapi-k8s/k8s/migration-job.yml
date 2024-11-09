@@ -8,8 +8,11 @@ spec:
       containers:
         - name: migration-container
           image: matheusinit/bookshelf:latest
+          envFrom:
+            - secretRef:
+                name: rest-secrets
           command: 
-          - "sh"
-          - "-c"
-          - "cd /app && /root/.local/bin/poetry run python -m app.models"
-          restartPolicy: Never
+            - "sh"
+            - "-c"
+            - "cd /app && /root/.local/bin/poetry run python -m app.models"
+      restartPolicy: Never
