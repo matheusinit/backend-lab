@@ -1,4 +1,4 @@
-FROM python:3.11.10-bookworm AS builder-image
+FROM python:3.11.10-bookworm
 
 ARG DEBIAN_FRONTEND=noninteractive
 

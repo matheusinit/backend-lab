@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: database-deployment
+  labels:
+    app: bookshelf
+spec:
+  selector:
+    matchLabels:
+      app: bookshelf
+      component: database
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: bookshelf
+        component: database
+    spec:
+      containers:
+        - name: bookshelf-database
+          image: postgres:16
+          ports:
+            - containerPort: 5432
+          envFrom:
+            - secretRef:
+                name: database-secrets
+          volumeMounts:
+            - name: database-storage
+              mountPath: /var/lib/postgresql/data
+      volumes:
+        - name: database-storage
+          persistentVolumeClaim:
+            claimName: bookshelf-pvc
